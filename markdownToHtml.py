@@ -28,6 +28,30 @@ def replaceLineWithLinks(content):
         content = preText + f"<p><a href=\"{linkSrc}\">{linkName}</a></p>" + linkEnd
     return content
 
+def replaceLineWithBold(content):
+    boldEnd = content
+    while content.count("**") > 0:
+        preText = content[:boldEnd.find("**")]
+
+        boldEnd = boldEnd[boldEnd.find("**")+2:]
+        boldText = boldEnd[:boldEnd.find("**")]
+        boldEnd = boldEnd[boldEnd.find("**")+2:]
+
+        content = preText + f"<b>{boldText}</b>" + boldEnd
+    return content
+
+def replaceLineWithItalic(content):
+    italicEnd = content
+    while content.count("*") > 0:
+        preText = content[:italicEnd.find("*")]
+
+        italicEnd = italicEnd[italicEnd.find("*")+1:]
+        italicText = italicEnd[:italicEnd.find("*")]
+        italicEnd = italicEnd[italicEnd.find("*")+1:]
+
+        content = preText + f"<em>{italicText}</em>" + italicEnd
+    return content
+
 input_file = str(sys.argv[1])
 output_file = str(sys.argv[2])
 
@@ -71,13 +95,18 @@ for line in lines:
         header_depth = level
         content = line[level+1:]
         content = replaceLineWithImages(content)
-        conent = replaceLineWithLinks(content)
-        
+        content = replaceLineWithLinks(content)
+        content = replaceLineWithBold(content)
+        content = replaceLineWithItalic(content)
+
         html += indent_depth + header_indent(level) + f"<h{level}>{content}</h{level}>\n"
     else:
         if(line != ""):
             line = replaceLineWithImages(line)
             line = replaceLineWithLinks(line)
+            line = replaceLineWithBold(line)
+            line = replaceLineWithItalic(line)
+
             html += indent_depth + header_indent(header_depth+1) + f"<p>{line}</p>\n"
 
 indent_depth = indent_depth.replace("\t", "", 1)

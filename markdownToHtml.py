@@ -1,5 +1,33 @@
 import sys
 
+def replaceLineWithImages(content):
+    imageEnd = content
+    while content.count("![") > 0:
+        preText = content[:imageEnd.find("![")]
+
+        imageEnd = imageEnd[imageEnd.find("![")+2:]
+        imageName = imageEnd[:imageEnd.find("](")]
+        imageEnd = imageEnd[imageEnd.find("](")+2:]
+        imageSrc = imageEnd[:imageEnd.find(")")]
+        imageEnd = imageEnd[imageEnd.find(")")+1:]
+        
+        content = preText + f"<img src = \"{imageSrc}\" alt=\"{imageName}\"/>" + imageEnd
+    return content
+
+def replaceLineWithLinks(content):
+    linkEnd = content
+    while content.count("[") > 0:
+        preText = content[:linkEnd.find("[")]
+
+        linkEnd = linkEnd[linkEnd.find("[")+1:]
+        linkName = linkEnd[:linkEnd.find("](")]
+        linkEnd = linkEnd[linkEnd.find("](")+2:]
+        linkSrc = linkEnd[:linkEnd.find(")")]
+        linkEnd = linkEnd[linkEnd.find(")")+1:]
+
+        content = preText + f"<p><a href=\"{linkSrc}\">{linkName}</a></p>" + linkEnd
+    return content
+
 input_file = str(sys.argv[1])
 output_file = str(sys.argv[2])
 
@@ -13,7 +41,7 @@ html += indent_depth + "<head>\n"
 indent_depth += "\t"
 html += indent_depth + "<link rel=\"stylesheet\" type=\"text/css\" href=\"./style.css\" />\n" #Adding Stylesheet
 html += indent_depth + "<title> "
-if(input_file == "index"): #Adding Title
+if((input_file[:len(input_file)-3]) == "index"): #Adding Title
     html += "Home - Teenage Coven Knights" 
 else:
     html += (input_file[:len(input_file)-3]) + " - Teenage Coven Knights"
@@ -42,21 +70,14 @@ for line in lines:
         level = line.count("#")
         header_depth = level
         content = line[level+1:]
-        imageEnd = content
-        while content.count("![") > 0:
-            preText = content[:imageEnd.find("![")]
-
-            imageEnd = imageEnd[imageEnd.find("![")+2:]
-            imageName = imageEnd[:imageEnd.find("](")]
-            imageEnd = imageEnd[imageEnd.find("](")+2:]
-            imageSrc = imageEnd[:imageEnd.find(")")]
-            imageEnd = imageEnd[imageEnd.find(")")+1:]
-            
-            content = preText + f"<img src = \"{imageSrc}\" alt=\"{imageName}\"/>" + imageEnd
-            
+        content = replaceLineWithImages(content)
+        conent = replaceLineWithLinks(content)
+        
         html += indent_depth + header_indent(level) + f"<h{level}>{content}</h{level}>\n"
     else:
         if(line != ""):
+            line = replaceLineWithImages(line)
+            line = replaceLineWithLinks(line)
             html += indent_depth + header_indent(header_depth+1) + f"<p>{line}</p>\n"
 
 indent_depth = indent_depth.replace("\t", "", 1)

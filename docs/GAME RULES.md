@@ -12,8 +12,6 @@ TODO
 
 IDK
 
-[HEALING]: 	"Healing Rules"
-
 ## Encumbrance
 
 TODO

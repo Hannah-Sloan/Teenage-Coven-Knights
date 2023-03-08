@@ -25,7 +25,7 @@ html, body
 @media (min-width:30em)  
 { body{max-width: 20em;} }
 
-/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
 @media (min-width:40em)  
 { body{max-width: 30em;}}
 

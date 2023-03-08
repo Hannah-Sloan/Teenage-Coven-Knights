@@ -65,8 +65,8 @@ html += indent_depth + "<head>\n"
 indent_depth += "\t"
 html += indent_depth + "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" />\n" #Adding Stylesheet
 # html += indent_depth + "<link rel=\"shortcut icon\" href=\"img/moon.ico\" type=\"image/x-icon\"/>\n" #Adding Favicon
-html += indent_depth + "<link rel=\"shortcut icon\" href=\"https://raw.githubusercontent.com/Hannah-Sloan/Teenage-Coven-Knights/master/docs/img/moon.ico\" type=\"image/x-icon\"/>\n" #Adding Favicon
-html += indent_depth + "<link rel=\"icon\" href=\"https://raw.githubusercontent.com/Hannah-Sloan/Teenage-Coven-Knights/master/docs/img/moon.ico\" type=\"image/x-icon\"/>\n"
+html += indent_depth + "<link rel=\"shortcut icon\" href=\"https://raw.githubusercontent.com/Hannah-Sloan/Teenage-Coven-Knights/master/docs/img/moon_chrome.ico\" type=\"image/x-icon\"/>\n" #Adding Favicon
+html += indent_depth + "<link rel=\"icon\" href=\"https://raw.githubusercontent.com/Hannah-Sloan/Teenage-Coven-Knights/master/docs/img/moon_chrome.ico\" type=\"image/x-icon\"/>\n"
 html += indent_depth + "<title> "
 if((input_file[:len(input_file)-3]) == "index"): #Adding Title
     html += "Home - Teenage Coven Knights" 

@@ -38,7 +38,7 @@ Only get 1 of each. Can communicate with each other ad nauseam.
 
 **Action.** The shit. 
 
-**Bonus Action.** Anything Less. Can be done as an action.
+**Bonus Action.** Anything Less. Can be done as an *Action*.
 
 **Reaction.** When needed.
 

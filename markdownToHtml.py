@@ -31,16 +31,11 @@ def replaceLineWithLinks(content):
 def replaceLineWithBold(content):
     boldEnd = content
     while content.count("**") > 0:
-        print(content)
         preText = content[:content.find("**")]
 
-        print(preText)
         boldEnd = boldEnd[boldEnd.find("**")+2:]
         boldText = boldEnd[:boldEnd.find("**")]
         boldEnd = boldEnd[boldEnd.find("**")+2:]
-
-        print(boldText)
-        print(boldEnd)
 
         content = preText + f"<b>{boldText}</b>" + boldEnd
     return content
@@ -83,6 +78,9 @@ html += indent_depth + "</head>\n"
 html += indent_depth + "<body>\n"
 indent_depth += "\t"
 
+html += indent_depth + f"<p><a href=\"https://github.com/Hannah-Sloan/Teenage-Coven-Knights\">GITHUB</a>\n"
+html += indent_depth + f"<a href=\"index.html\">HOME</a></p>\n"
+
 with open(f"docs\{input_file}", "r") as f:
     md = f.read()
 
@@ -109,9 +107,7 @@ for line in lines:
         if(line != ""):
             line = replaceLineWithImages(line)
             line = replaceLineWithLinks(line)
-            print(line)
             line = replaceLineWithBold(line)
-            print(line)
             line = replaceLineWithItalic(line)
 
             html += indent_depth + header_indent(header_depth+1) + f"<p>{line}</p>\n"
@@ -123,5 +119,3 @@ html += "</html>"
 # Write the output to a file
 with open(f"docs\{output_file}", "w") as f:
     f.write(html)
-
-#print(html)

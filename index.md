@@ -4,4 +4,4 @@
 
 
 
-[GAME RULES](GAME RULES.md)
+[GAME RULES](GAME RULES.html)

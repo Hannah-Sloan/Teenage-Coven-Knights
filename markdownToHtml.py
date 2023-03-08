@@ -81,7 +81,7 @@ indent_depth += "\t"
 html += indent_depth + f"<p><a href=\"https://github.com/Hannah-Sloan/Teenage-Coven-Knights\">GITHUB</a>\n"
 html += indent_depth + f"<a href=\"index.html\">HOME</a></p>\n"
 
-with open(f"docs\{input_file}", "r") as f:
+with open(f"markdown\{input_file}", "r") as f:
     md = f.read()
 
 counter = 0

@@ -3,7 +3,7 @@ import sys
 def replaceLineWithImages(content):
     imageEnd = content
     while content.count("![") > 0:
-        preText = content[:imageEnd.find("![")]
+        preText = content[:content.find("![")]
 
         imageEnd = imageEnd[imageEnd.find("![")+2:]
         imageName = imageEnd[:imageEnd.find("](")]
@@ -17,7 +17,7 @@ def replaceLineWithImages(content):
 def replaceLineWithLinks(content):
     linkEnd = content
     while content.count("[") > 0:
-        preText = content[:linkEnd.find("[")]
+        preText = content[:content.find("[")]
 
         linkEnd = linkEnd[linkEnd.find("[")+1:]
         linkName = linkEnd[:linkEnd.find("](")]
@@ -31,11 +31,16 @@ def replaceLineWithLinks(content):
 def replaceLineWithBold(content):
     boldEnd = content
     while content.count("**") > 0:
-        preText = content[:boldEnd.find("**")]
+        print(content)
+        preText = content[:content.find("**")]
 
+        print(preText)
         boldEnd = boldEnd[boldEnd.find("**")+2:]
         boldText = boldEnd[:boldEnd.find("**")]
         boldEnd = boldEnd[boldEnd.find("**")+2:]
+
+        print(boldText)
+        print(boldEnd)
 
         content = preText + f"<b>{boldText}</b>" + boldEnd
     return content
@@ -43,7 +48,7 @@ def replaceLineWithBold(content):
 def replaceLineWithItalic(content):
     italicEnd = content
     while content.count("*") > 0:
-        preText = content[:italicEnd.find("*")]
+        preText = content[:content.find("*")]
 
         italicEnd = italicEnd[italicEnd.find("*")+1:]
         italicText = italicEnd[:italicEnd.find("*")]
@@ -104,7 +109,9 @@ for line in lines:
         if(line != ""):
             line = replaceLineWithImages(line)
             line = replaceLineWithLinks(line)
+            print(line)
             line = replaceLineWithBold(line)
+            print(line)
             line = replaceLineWithItalic(line)
 
             html += indent_depth + header_indent(header_depth+1) + f"<p>{line}</p>\n"

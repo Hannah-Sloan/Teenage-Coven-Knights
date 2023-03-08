@@ -1,6 +1,8 @@
+[MAIN](index.html)
 
 
-# ![Moon Logo](Moon.svg)GAME RULES
+
+# ![Moon Logo](img/Moon.svg)GAME RULES
 
 ## XP
 

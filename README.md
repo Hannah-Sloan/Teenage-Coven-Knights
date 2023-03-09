@@ -1,6 +1,4 @@
-# Teenage-Coven-Knights
-
-## https://hannah-sloan.github.io/Teenage-Coven-Knights/
+# [Teenage Coven Knights](https://hannah-sloan.github.io/Teenage-Coven-Knights/)
 
 
 
@@ -35,9 +33,33 @@ Following WCAG 2.1 as much as possible, ensuring easy readability and supporting
 - Web pages have **titles** that describe topic or purpose.
 - The purpose of each link can be determined from the **link text alone**.
 
-## Open Source, License, and Collaboration
+## Game License
 
-TBA
+You may **not** use the game's art. You may **only** use Logos and images included in the Creator Kit.
+
+The **text** of Teenage Coven Knights is Licensed under the [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/legalcode). This allows you to copy Teenage Coven Knights into any medium or format, and to remix, transform, and build upon the text so long as you **do not** use the material for commercial purposes and you include the following:
+
+**Attribution Statement:**
+
+*"(Content Title) draws from **Teenage Coven Knights** by **Hannah Ava Sloan** which is available at https://hannah-sloan.github.io/Teenage-Coven-Knights/ and is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International** available at https://creativecommons.org/licenses/by-nc/4.0/. Such Licensed Material [has/has not] been modified."*
+
+### **Third-Party Content**
+
+The License refers to the sharing and transformation of the Teenage Coven Knights RPG. Third-Party content that does **not contain** anything within The Teenage Coven Knights RPG is not restricted by the License. That means **you are free to:**
+
+1)  Use the general rules and **game mechanics** of Teenage Coven Knights. 
+2)  State your content is **"Teenage Coven Knights compatible"**.
+3)  Use your content for **commercial purposes**. 
+
+Additionally you may **Reference** Teenage Coven Knights' original people, places, items, creatures, spells, and features. **So long as** you include the following in your content:
+
+*"[Content Title] is Third-Party Content and is **not** affiliated with Hannah Ava Sloan, Teenage Coven Knights, or its creators."*
+
+### Open Source
+
+This project's code is publicly available here on this Github. Redistributing the project in its entirety or any of the markdown or html falls under the Game License, since the source code contains the verbatim text of the RPG. Fortunately, the License allows you to copy, remix, transform, and build on the text so long as you **include the attribution statement**. Make sure you **remember this step** when creating ***forking or cloning*** of the repository!
+
+The hope is this will allow you to easily create **Teenage Coven Knights hacks**, as well as create *Pull requests* with community suggestions or just improving the code. Though I will retain control of this version of Teenage Coven Knights it's the **community that will drive it** to be the best it can be. Perhaps a popular fork will completely open source development- containing popular rule variations and homebrew! You could steal the css style and use it to present your homebrew class (see **Third-Party Content** above). The process of writing for linked markdown pages is different than for pdf; perhaps you want to use this github as a template to converting your markdown project to html. This github is meant to **allow you** to do all of that.
 
 ## TODO
 

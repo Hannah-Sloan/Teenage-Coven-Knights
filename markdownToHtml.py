@@ -68,14 +68,17 @@ html += indent_depth + "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.
 html += indent_depth + "<link rel=\"shortcut icon\" href=\"https://raw.githubusercontent.com/Hannah-Sloan/Teenage-Coven-Knights/master/docs/img/moon_chrome.ico\" type=\"image/x-icon\"/>\n" #Adding Favicon
 html += indent_depth + "<link rel=\"icon\" href=\"https://raw.githubusercontent.com/Hannah-Sloan/Teenage-Coven-Knights/master/docs/img/moon_chrome.ico\" type=\"image/x-icon\"/>\n"
 html += indent_depth + "<title> "
+title = ""
 if((input_file[:len(input_file)-3]) == "index"): #Adding Title
     html += "Home - Teenage Coven Knights" 
+    title = "Home"
 else:
     title = (input_file[:len(input_file)-3])
     title = title.replace("_", " ")
     title = title.upper()
     html += title + " - Teenage Coven Knights"
 html += " </title>\n"
+html += indent_depth + f"<meta name=\"description\" content=\"TCK RPG System - {title}\" >"
 indent_depth = indent_depth.replace("\t", "", 1)
 html += indent_depth + "</head>\n"
 

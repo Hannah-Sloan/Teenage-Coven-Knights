@@ -59,7 +59,7 @@ indent_depth = ""
 
 # Boilerplate
 html = "<!DOCTYPE html>\n"
-html += "<html>\n"
+html += "<html lang=\"en\">\n"
 indent_depth += "\t"
 html += indent_depth + "<head>\n"
 indent_depth += "\t"

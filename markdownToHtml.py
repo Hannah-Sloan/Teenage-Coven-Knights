@@ -78,8 +78,10 @@ else:
     title = title.upper()
     html += title + " - Teenage Coven Knights"
 html += " </title>\n"
-html += indent_depth + f"<meta name=\"description\" content=\"TCK RPG System - {title}\" >"
-html += indent_depth + "<meta name=\"keywords\" content=\"HTML, CSS, RPG, TCK, open, Teenage Coven Knights, OSR, rules-lite, indie\">"
+html += indent_depth + f"<meta name=\"description\" content=\"TCK RPG System - {title}\" >\n"
+html += indent_depth + "<meta name=\"keywords\" content=\"HTML, CSS, RPG, TCK, open, Teenage Coven Knights, OSR, rules-lite, indie\">\n"
+html += indent_depth + "<meta name=\"author\" content=\"Hannah Ava Sloan\">\n"
+html += indent_depth + "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
 indent_depth = indent_depth.replace("\t", "", 1)
 html += indent_depth + "</head>\n"
 

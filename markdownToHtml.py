@@ -79,6 +79,7 @@ else:
     html += title + " - Teenage Coven Knights"
 html += " </title>\n"
 html += indent_depth + f"<meta name=\"description\" content=\"TCK RPG System - {title}\" >"
+html += indent_depth + "<meta name=\"keywords\" content=\"HTML, CSS, RPG, TCK, open, Teenage Coven Knights, OSR, rules-lite, indie\">"
 indent_depth = indent_depth.replace("\t", "", 1)
 html += indent_depth + "</head>\n"
 

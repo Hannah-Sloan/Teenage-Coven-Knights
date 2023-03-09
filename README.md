@@ -61,9 +61,33 @@ This project's code is publicly available here on this Github. Redistributing th
 
 The hope is this will allow you to easily create **Teenage Coven Knights hacks**, as well as create *Pull requests* with community suggestions or just improving the code. Though I will retain control of this version of Teenage Coven Knights it's the **community that will drive it** to be the best it can be. Perhaps a popular fork will completely open source development- containing popular rule variations and homebrew! You could steal the css style and use it to present your homebrew class (see **Third-Party Content** above). The process of writing for linked markdown pages is different than for pdf; perhaps you want to use this github as a template to converting your markdown project to html. This github is meant to **allow you** to do all of that.
 
+## Special Markdown Syntax
+
+In creating this SRD I wanted features native markdown didn't support. This is one reason why I made my own markdown to html converter (markdownToHtml.py). That means I can support a few extra tricks:
+
+### Linking to a specific section
+
+Simply add a link like usual but include #your-header-lower-case-dashes for example: 
+
+```
+[Link Text](#resting-and-healing)
+```
+
+This works for sections in other files too, just specify the file first
+
+```
+[Link Text](game_rules.md#resting-and-healing)
+```
+
+NOTE: You cannot link to h1 headers (titles). This functionality should be covered just by linking to the file itself. The .md in the link will automatically be converted to .html when the markdown is converted to html
+
+### No starting with
+
+I search for links and images by searching for *'!['* and then searching for *'['* so your regular text cannot include those unless you are making a link or image. Same goes for *'\*'* for bold and italics.
+
 ## TODO
 
-- Local links (within a file)
+- ~~Local links (within a file *and to other sections!*)~~
 - 'Embeds'
 - 'Tooltips' (defined terms)
 - Search Function

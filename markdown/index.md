@@ -4,7 +4,7 @@
 
 
 
-[GAME RULES](game_rules.html)
+[GAME RULES](game_rules.md#resting-and-healing)
 
 
 

@@ -23,9 +23,10 @@ def replaceLineWithLinks(content):
         linkName = linkEnd[:linkEnd.find("](")]
         linkEnd = linkEnd[linkEnd.find("](")+2:]
         linkSrc = linkEnd[:linkEnd.find(")")]
+        linkSrc = linkSrc.replace(".md", ".html")
         linkEnd = linkEnd[linkEnd.find(")")+1:]
 
-        content = preText + f"<p><a href=\"{linkSrc}\">{linkName}</a></p>" + linkEnd
+        content = preText + f"<a href=\"{linkSrc}\">{linkName}</a>" + linkEnd
     return content
 
 def replaceLineWithBold(content):
@@ -107,6 +108,7 @@ def header_indent(header_depth_in):
   return "\t"*(header_depth_in-1)
 
 lines = md.split("\n")
+curSection = False
 for line in lines:
     if line.startswith("#"):
         level = line.count("#")
@@ -116,6 +118,14 @@ for line in lines:
         content = replaceLineWithLinks(content)
         content = replaceLineWithBold(content)
         content = replaceLineWithItalic(content)
+        if(curSection):
+            html += indent_depth + header_indent(level) + "</section>\n"
+            curSection = False
+
+        if(level > 1):
+            id = content.lower().replace(" ", "-")
+            html += indent_depth + header_indent(level) + f"<section id=\"{id}\">\n"
+            curSection = True
 
         html += indent_depth + header_indent(level) + f"<h{level}>{content}</h{level}>\n"
     else:

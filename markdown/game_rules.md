@@ -34,6 +34,8 @@ TODO
 
 Only get 1 of each. Can communicate with each other ad nauseam.<br>**Action.** The shit.<br>**Bonus Action.** Anything Less. Can be done as an *Action*.<br>**Reaction.** When needed.<br>
 
+When you take damage you lower your hit points by that much. See *[Resting and Healing](#resting-and-healing)* for how to gain hit points back.
+
 ## STATS
 
 ???
